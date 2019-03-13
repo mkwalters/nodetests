@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+app.set('view engine', 'ejs')
 let request = require('request');
 
 let apiKey = 'b54f61e034024fb9d77f7c46f05b78c2';
@@ -16,7 +17,7 @@ request(url, function (err, response, body) {
 
 
 app.get('/', function (req, res) {
-  res.send('Hello World!')
+  res.render('index');
 })
 
 app.listen(3000, function () {
